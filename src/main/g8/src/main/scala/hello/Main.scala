@@ -1,7 +1,7 @@
 package hello
 
 import zio.App
-import zio.console.{putStrLn, getStrLn}
+import zio.console.{getStrLn, putStrLn}
 
 object Main extends App {
 
@@ -11,7 +11,7 @@ object Main extends App {
   val myAppLogic =
     for {
       _ <- putStrLn("Hello! What is your name?")
-      n <- getStrLn
-      _ <- putStrLn(s"Hello, welcome to ZIO!")
+      name <- getStrLn
+      _ <- putStrLn(s"Hello $name, welcome to ZIO!")
     } yield ()
 }
